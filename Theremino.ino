@@ -27,7 +27,7 @@ void setup() {
   float som = 0;
   float ex=0;
   pinMode(10, INPUT);
-  pinMode(9, OUTPUT);
+  pinMode(9, OUTPUT); //Added a button to control the scale modes. Just put a button connected to pin 9 and pin 10.
 }
  
 void loop() {
@@ -54,12 +54,8 @@ void loop() {
       flagb=0;
     }
   }
-
-  //Serial.println(cmMsec);
-  Serial.print(digitalRead(10));
-
 }
-
+//Glissando scale
 void theremin(){
   float ex;
   float cmMsec;
@@ -76,6 +72,7 @@ void theremin(){
   }
 }
 
+//Pentatonic scale
 void pentatonic(){
   float cmMsec;
   if(cmMsec>=4 && cmMsec<9){
@@ -101,6 +98,7 @@ void pentatonic(){
   }
 }
 
+//Harmonic scale
 void harmonic(){
   float cmMsec;
   if(cmMsec>=4 && cmMsec<9){
